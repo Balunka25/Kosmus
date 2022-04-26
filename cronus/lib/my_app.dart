@@ -11,9 +11,8 @@ class MyApp extends StatelessWidget {
 
     return 
       MaterialApp(
-        title: 'Info Unity Study',
+        title: 'Cosmos',
         debugShowCheckedModeBanner: false,
-        // theme: theme(),
         home: const InitialPage(),
       );
   }

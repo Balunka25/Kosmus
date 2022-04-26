@@ -1,19 +1,21 @@
-// import '../data/fetch_all_repository.dart';
-// import '../data/fetch_planets.dart';
 
-// class HomeController {
-//   AllPlanets allplanets = AllPlanets(results: []);
-//   final repository = FetchAllRepository();
-//   HomeState state = HomeState.start;
+import 'package:cronus/data/fetch_all_planets.dart';
 
-//   Future<void> start() async {
-//     state = HomeState.loading;
+import '../data/fetch_all_repository.dart';
 
-//       allplanets = await repository.fetchAll();
-//       state = HomeState.success;
+class HomeController {
+  AllPlanets allplanets = AllPlanets(results: []);
+  final repository = FetchAllRepository();
+  HomeState state = HomeState.start;
 
-//       state = HomeState.error;
-//     }
-//   }
+  Future<void> start() async {
+    state = HomeState.loading;
 
-// enum HomeState { start, loading, success, error }
+      allplanets = await repository.fetchAll();
+      state = HomeState.success;
+
+      state = HomeState.error;
+    }
+  }
+
+enum HomeState { start, loading, success, error }
