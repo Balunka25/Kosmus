@@ -1,17 +1,15 @@
-
 import 'package:cronus/data/fetch_all_planets.dart';
-
 import '../data/fetch_all_repository.dart';
 
 class HomeController {
-  AllPlanets allplanets = AllPlanets(results: []);
+  Result result = Result(bodies: []);
   final repository = FetchAllRepository();
   HomeState state = HomeState.start;
 
   Future<void> start() async {
     state = HomeState.loading;
 
-      allplanets = await repository.fetchAll();
+      result = await repository.fetchAll();
       state = HomeState.success;
 
       state = HomeState.error;

@@ -5,12 +5,12 @@ class FetchAllRepository {
   final dio = Dio();
   final url = 'https://api.le-systeme-solaire.net/rest/bodies/';
 
-  Future<AllPlanets> fetchAll() async {
+  Future<Result> fetchAll() async {
     final response = await dio.get(url);
     final json = response.data;
 
-    final alllanetsAllPlanets = AllPlanets.fromJson(json);
+    final results = Result.fromJson(json);
 
-    return alllanetsAllPlanets;
+    return results;
   }
 }

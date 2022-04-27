@@ -23,7 +23,6 @@ class CustomButtonExplore extends StatelessWidget {
         onPressed: onPressed,
         child: Container(
           height: 50,
-          width: 220,
           color: const Color.fromARGB(255, 135, 18, 9),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
