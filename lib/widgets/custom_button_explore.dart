@@ -11,11 +11,6 @@ class CustomButtonExplore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        // style: ButtonStyle(
-        //     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-        //         RoundedRectangleBorder(
-        //   borderRadius: BorderRadius.circular(18.0),
-        // ))),
         style: ElevatedButton.styleFrom(
           primary: const Color.fromARGB(255, 135, 18, 9),
           shape: const StadiumBorder(),

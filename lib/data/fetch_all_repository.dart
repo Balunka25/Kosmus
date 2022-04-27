@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 
 class FetchAllRepository {
   final dio = Dio();
-  final url = 'https://api.le-systeme-solaire.net/rest/bodies/';
+  final url = 'https://api.le-systeme-solaire.net/rest/bodies?filter[]=isPlanet,eq,true';
 
   Future<Result> fetchAll() async {
     final response = await dio.get(url);
