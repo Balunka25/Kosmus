@@ -69,14 +69,14 @@ class _PlanetInfoState extends State<PlanetInfo> {
                         Container(
                           height: 300,
                           width: 300,
-                          decoration: const BoxDecoration(
+                          decoration: BoxDecoration(
                             image: DecorationImage(
-                                image: AssetImage('lib/images/uranus.png')),
+                                image: AssetImage('lib/images/${snapshot.data!.id}.png')),
                           ),
                         ),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const SizedBox(width: 85),
                             const Icon(Icons.arrow_back_ios_new,
                                 color: Colors.white),
                             Text(
@@ -88,7 +88,7 @@ class _PlanetInfoState extends State<PlanetInfo> {
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white),
                             ),
-                            const SizedBox(width: 23),
+                            const SizedBox(width: 24),
                             Transform(
                               transform: Matrix4.rotationY(math.pi),
                               child: const Icon(Icons.arrow_back_ios_new,
@@ -145,7 +145,7 @@ class _PlanetInfoState extends State<PlanetInfo> {
                             Text("Discovered by:",
                                 style: TextStyle(
                                     color:
-                                        const Color.fromARGB(255, 135, 18, 9),
+                                        Color.fromARGB(255, 229, 187, 1),
                                     fontFamily: GoogleFonts.ubuntu().fontFamily,
                                     fontSize: 24,
                                     fontWeight: FontWeight.bold)),
@@ -171,7 +171,7 @@ class _PlanetInfoState extends State<PlanetInfo> {
                             Text("Discovery date:",
                                 style: TextStyle(
                                     color:
-                                        const Color.fromARGB(255, 135, 18, 9),
+                                        const Color.fromARGB(255, 229, 187, 1),
                                     fontFamily: GoogleFonts.ubuntu().fontFamily,
                                     fontSize: 24,
                                     fontWeight: FontWeight.bold)),

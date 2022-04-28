@@ -1,15 +1,16 @@
 import 'dart:ui';
 
 import 'package:cronus/data/fetch_all_planets.dart';
+import 'package:cronus/pages/moon_page.dart';
 import 'package:cronus/pages/planet_info.dart';
-import 'package:cronus/widgets/card_planets.dart';
 import 'package:cronus/widgets/loading_animation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../controller/home_controller.dart';
+import 'sun_page.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({
+  const HomePage({
     Key? key,
   }) : super(key: key);
 
@@ -41,108 +42,140 @@ class _HomePageState extends State<HomePage> {
           body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              SizedBox(height: 30),
+              Ink.image(
+                image: AssetImage("lib/images/moon.png"),
+                height: 100,
+                width: 190,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: ((context) => MoonPage())));
+                  },
+                ),
+              ),
+              const Icon(Icons.circle, size: 5, color: Colors.white),
+              const Spacer(),
+              const Icon(Icons.circle, size: 5, color: Colors.white),
+              const Spacer(),
+              const Icon(Icons.circle, size: 5, color: Colors.white),
+              const Spacer(),
+              const Icon(Icons.circle, size: 5, color: Colors.white),
+              const Spacer(),
+              const Icon(Icons.circle, size: 5, color: Colors.white),
+              const Spacer(),
+              const Icon(Icons.circle, size: 5, color: Colors.white),
+              const Spacer(),
+              const Icon(Icons.circle, size: 5, color: Colors.white),
+              const Spacer(),
+              const Icon(Icons.circle, size: 5, color: Colors.white),
+              const Spacer(),
               Container(
-                margin: EdgeInsets.only(right: 40, left: 40),
-                height: 300,
+                margin: const EdgeInsets.only(left: 50),
+                height: 250,
                 child: FutureBuilder(
                   future: controller.start(),
                   builder: ((context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.done) {
-                      return PageView.builder(
+                      return ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemCount: controller.result.bodies!.length,
                         itemBuilder: (context, index) {
-                          return ClipRect(
-                            child: BackdropFilter(
-                              filter:
-                                  ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-                              child: Container(
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20.0),
-                                      color:
-                                          Colors.grey[800]!.withOpacity(0.4)),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      const SizedBox(height: 40),
-                                      Row(
-                                        children: [
-                                          Container(
-                                            height: 130,
-                                            width: 130,
-                                            decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                                  image: AssetImage(
-                                                      "lib/images/${controller.result.bodies![index].id}.png")),
+                          return Row(
+                            children: [ ClipRect(
+                              child: BackdropFilter(
+                                filter:
+                                    ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                                child: Container(
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20.0),
+                                        color:
+                                            Colors.grey[800]!.withOpacity(0.4)),
+                                    child: Column(
+                                      children: [
+                                        const SizedBox(height: 10),
+                                        Row(
+                                          children: [
+                                            Container(
+                                              height: 130,
+                                              width: 130,
+                                              decoration: BoxDecoration(
+                                                image: DecorationImage(
+                                                    image: AssetImage(
+                                                        "lib/images/${controller.result.bodies![index].id}.png")),
+                                              ),
                                             ),
-                                          ),
-                                          SizedBox(width: 30),
-                                          Column(
-                                            children: [
-                                              Text(
-                                              controller.result.bodies![index]
-                                                  .englishName!,
-                                              style: const TextStyle(
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 28)),
-                                                  SizedBox(height: 5),
-                                                  Text(
-                                              controller.result.bodies![index]
-                                                  .name!,
-                                              style: TextStyle(
-                                                  color: Colors.grey[400],
-                                                  fontWeight: FontWeight.normal,
-                                                  fontSize: 19)),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                      
-                                      SizedBox(height: 50),
-                                      Container(
-                                        margin: const EdgeInsets.only(
-                                            right: 50, left: 50),
-                                        child: ElevatedButton(
-                                            style: ElevatedButton.styleFrom(
-                                              primary: const Color.fromARGB(
-                                                  255, 135, 18, 9),
-                                              shape: const StadiumBorder(),
-                                            ),
-                                            onPressed: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: ((context) =>
-                                                      PlanetInfo(
-                                                          id: controller
-                                                              .result
-                                                              .bodies![index]
-                                                              .id!)),
-                                                ),
-                                              );
-                                            },
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
+                                            const SizedBox(width: 30),
+                                            Column(
                                               children: [
-                                                Text('EXPLORE',
+                                                Text(
+                                                    controller
+                                                        .result
+                                                        .bodies![index]
+                                                        .englishName!,
+                                                    style: const TextStyle(
+                                                        color: Colors.white,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: 28)),
+                                                const SizedBox(height: 5),
+                                                Text(
+                                                    controller.result
+                                                        .bodies![index].name!,
                                                     style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontFamily:
-                                                          GoogleFonts.ubuntu()
-                                                              .fontFamily,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      fontSize: 18,
-                                                    )),
+                                                        color: Colors.grey[400],
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                        fontSize: 19)),
                                               ],
-                                            )),
-                                      )
-                                    ],
-                                  )),
+                                            ),
+                                          ],
+                                        ),
+                                        const SizedBox(height: 30),
+                                        Container(
+                                          margin: const EdgeInsets.only(
+                                              right: 70, left: 70),
+                                          child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                primary: const Color.fromARGB(
+                                                    255, 229, 187, 1),
+                                                shape: const StadiumBorder(),
+                                              ),
+                                              onPressed: () {
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: ((context) =>
+                                                        PlanetInfo(
+                                                            id: controller
+                                                                .result
+                                                                .bodies![index]
+                                                                .id!)),
+                                                  ),
+                                                );
+                                              },
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Text('EXPLORE',
+                                                      style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontFamily:
+                                                            GoogleFonts.ubuntu()
+                                                                .fontFamily,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: 18,
+                                                      )),
+                                                ],
+                                              )),
+                                        )
+                                      ],
+                                    )),
+                              ),
                             ),
+                            SizedBox(width: 16,)]
                           );
                         },
                       );
@@ -171,6 +204,34 @@ class _HomePageState extends State<HomePage> {
                   }),
                 ),
               ),
+              const Icon(Icons.circle, size: 5, color: Colors.white),
+              const Spacer(),
+              const Icon(Icons.circle, size: 5, color: Colors.white),
+              const Spacer(),
+              const Icon(Icons.circle, size: 5, color: Colors.white),
+              const Spacer(),
+              const Icon(Icons.circle, size: 5, color: Colors.white),
+              const Spacer(),
+              const Icon(Icons.circle, size: 5, color: Colors.white),
+              const Spacer(),
+              const Icon(Icons.circle, size: 5, color: Colors.white),
+              const Spacer(),
+              const Icon(Icons.circle, size: 5, color: Colors.white),
+              const Spacer(),
+              const Icon(Icons.circle, size: 5, color: Colors.white),
+              const Spacer(),
+              Ink.image(
+                image: const AssetImage("lib/images/sun.png"),
+                height: 100,
+                width: 190,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: ((context) => const SunPage())));
+                  },
+                ),
+              ),
+              const SizedBox(height: 20)
             ],
           )),
     );
