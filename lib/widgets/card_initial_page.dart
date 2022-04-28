@@ -31,7 +31,7 @@ class CardInitialPage extends StatelessWidget {
                     Text("Welcome to",
                         style: Theme.of(context).textTheme.headline5!.copyWith(color: Colors.white, fontFamily: GoogleFonts.quicksand().fontFamily)),
                     const SizedBox(width: 5),
-                    const Text("Cosmos",
+                    const Text("Kosmus",
                         style: TextStyle(
                           color: Color.fromARGB(255, 135, 18, 9),
                           fontWeight: FontWeight.bold,

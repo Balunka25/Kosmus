@@ -38,10 +38,11 @@ class CardPlanets extends StatelessWidget {
                   children: [
                     const SizedBox(width: 15),
                     Text(categoryName,
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Color.fromARGB(255, 99, 3, 3),
                           fontWeight: FontWeight.bold,
-                          fontSize: 28
+                          fontSize: 28,
+                          fontFamily: GoogleFonts.kanit().fontFamily,
                         )),
                         const SizedBox(width: 15),
                   ],
@@ -50,8 +51,10 @@ class CardPlanets extends StatelessWidget {
                 Text(categoryResult,
                     style: TextStyle(
                       color: colorText,
-                      fontSize: 28
-                    )),
+                      fontSize: 28,
+                      fontFamily: GoogleFonts.sourceSansPro().fontFamily,
+                    )
+                    ),
                     const SizedBox(height: 20)
               ],
             )),

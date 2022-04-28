@@ -1,7 +1,6 @@
 import 'package:cronus/widgets/card_planets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'dart:math' as math;
 import '../data/fetch_planet_info.dart';
 import '../widgets/loading_animation.dart';
 
@@ -64,127 +63,139 @@ class _PlanetInfoState extends State<PlanetInfo> {
                   future: futureAlbum,
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
-                      return Column( mainAxisAlignment: MainAxisAlignment.center,children: [
-                        const SizedBox(height: 40),
-                        Container(
-                          height: 300,
-                          width: 300,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage('lib/images/${snapshot.data!.id}.png')),
-                          ),
-                        ),
-                        Row(
+                      return Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Icon(Icons.arrow_back_ios_new,
-                                color: Colors.white),
-                            Text(
-                              snapshot.data!.englishName.toUpperCase(),
-                              style: TextStyle(
-                                  fontFamily: GoogleFonts.atkinsonHyperlegible()
-                                      .fontFamily,
-                                  fontSize: 30,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white),
+                            const SizedBox(height: 40),
+                            Container(
+                              height: 300,
+                              width: 300,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        'lib/images/${snapshot.data!.id}.png')),
+                              ),
                             ),
-                            const SizedBox(width: 24),
-                            Transform(
-                              transform: Matrix4.rotationY(math.pi),
-                              child: const Icon(Icons.arrow_back_ios_new,
-                                  color: Colors.white),
-                            )
-                          ],
-                        ),
-                        const SizedBox(height: 50),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Column(
+                            const SizedBox(height: 10),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                CardPlanets(
-                                  categoryName: "DENSITY",
-                                  categoryResult:
-                                      "${snapshot.data!.density.toString()}",
-                                  color: Colors.white.withOpacity(0.8),
-                                  colorText: Colors.black,
+                                const Icon(Icons.arrow_forward_ios,
+                                color: Colors.white,
                                 ),
-                                CardPlanets(
-                                  categoryName: "MASS",
-                                  categoryResult:
-                                      "${snapshot.data!.massValue.toString()}",
-                                  color: Colors.grey[900]!,
-                                  colorText: Colors.white,
-                                )
+                                const SizedBox(width: 5),
+                                Text(
+                                  snapshot.data!.englishName.toUpperCase(),
+                                  style: TextStyle(
+                                      fontFamily:
+                                          GoogleFonts.istokWeb()
+                                              .fontFamily,
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white
+                                      ),
+                                      textAlign: TextAlign.center,
+                                ),
+                                const SizedBox(width: 10),
+                                const Icon(Icons.arrow_back_ios,
+                                color: Colors.white,
+                                ),
                               ],
                             ),
-                            Column(
+                            const SizedBox(height: 50),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                CardPlanets(
-                                  categoryName: "GRAVITY",
-                                  categoryResult:
-                                      "${snapshot.data!.gravity.toString()}",
-                                  color: Colors.grey[900]!,
-                                  colorText: Colors.white,
+                                Column(
+                                  children: [
+                                    CardPlanets(
+                                      categoryName: "DENSITY",
+                                      categoryResult:
+                                          "${snapshot.data!.density.toString()}",
+                                      color: Colors.white.withOpacity(0.8),
+                                      colorText: Colors.black,
+                                    ),
+                                    CardPlanets(
+                                      categoryName: "MASS",
+                                      categoryResult:
+                                          "${snapshot.data!.massValue.toString()}",
+                                      color: Colors.grey[900]!,
+                                      colorText: Colors.white,
+                                    )
+                                  ],
                                 ),
-                                CardPlanets(
-                                  categoryName: "VOLUME",
-                                  categoryResult:
-                                      "${snapshot.data!.volValue.toString()}",
-                                  color: Colors.white.withOpacity(0.8),
-                                  colorText: Colors.black,
-                                )
+                                Column(
+                                  children: [
+                                    CardPlanets(
+                                      categoryName: "GRAVITY",
+                                      categoryResult:
+                                          "${snapshot.data!.gravity.toString()}",
+                                      color: Colors.grey[900]!,
+                                      colorText: Colors.white,
+                                    ),
+                                    CardPlanets(
+                                      categoryName: "VOLUME",
+                                      categoryResult:
+                                          "${snapshot.data!.volValue.toString()}",
+                                      color: Colors.white.withOpacity(0.8),
+                                      colorText: Colors.black,
+                                    )
+                                  ],
+                                ),
                               ],
                             ),
-                          ],
-                        ),
-                        const SizedBox(height: 20),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Discovered by:",
-                                style: TextStyle(
-                                    color:
-                                        Color.fromARGB(255, 229, 187, 1),
+                            const SizedBox(height: 20),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Discovered by:",
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 229, 187, 1),
+                                      fontFamily:
+                                          GoogleFonts.rubik().fontFamily,
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                const SizedBox(height: 15),
+                                Text(
+                                  "${snapshot.data!.discoveredBy.toString()}",
+                                  style: TextStyle(
+                                    color: Colors.white,
                                     fontFamily: GoogleFonts.ubuntu().fontFamily,
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.bold)),
-                            const SizedBox(height: 15),
-                            Text("${snapshot.data!.discoveredBy.toString()}",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: GoogleFonts.ubuntu().fontFamily,
-                                  fontSize: 20,
-                                )),
-                          ],
-                        ),
-                        const SizedBox(height: 20),
-                        Container(
-                          height: 1,
-                          width: 100,
-                          color: Colors.white
-                        ),
-                        const SizedBox(height: 10),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Discovery date:",
-                                style: TextStyle(
-                                    color:
-                                        const Color.fromARGB(255, 229, 187, 1),
-                                    fontFamily: GoogleFonts.ubuntu().fontFamily,
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.bold)),
-                            const SizedBox(height: 15),
-                            Text("${snapshot.data!.discoveryDate.toString()}",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: GoogleFonts.ubuntu().fontFamily,
-                                  fontSize: 20,
-                                )),
-                          ],
-                        ),
-                      ]);
+                                    fontSize: 20,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 20),
+                            Container(
+                                height: 1, width: 100, color: Colors.white),
+                            const SizedBox(height: 10),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text("Discovery date:",
+                                    style: TextStyle(
+                                        color: const Color.fromARGB(
+                                            255, 229, 187, 1),
+                                        fontFamily:
+                                            GoogleFonts.rubik().fontFamily,
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold)),
+                                const SizedBox(height: 15),
+                                Text(
+                                    "${snapshot.data!.discoveryDate.toString()}",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontFamily:
+                                          GoogleFonts.ubuntu().fontFamily,
+                                      fontSize: 20,
+                                    )),
+                              ],
+                            ),
+                          ]);
                     } else if (snapshot.hasError) {
                       return Text('${snapshot.error}');
                     }

@@ -33,11 +33,11 @@ class InfoMoonAndSunContainer extends StatelessWidget {
           const SizedBox(width: 15),
           Text(categoryName,
               style: TextStyle(
-                  color: colorText, fontWeight: FontWeight.bold, fontSize: 20)),
+                  color: colorText, fontWeight: FontWeight.bold, fontSize: 20, fontFamily: GoogleFonts.rubik().fontFamily)),
           const SizedBox(width: 15),
           const SizedBox(height: 30),
           Text(categoryResult,
-              style: TextStyle(color: colorText, fontSize: 22)),
+              style: TextStyle(color: colorText, fontSize: 22, fontFamily: GoogleFonts.ubuntu().fontFamily)),
           const SizedBox(width: 20)
         ],
       ),

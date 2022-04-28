@@ -97,7 +97,7 @@ class _SunPageState extends State<SunPage> {
                                           fontWeight: FontWeight.bold,
                                           color: Colors.white),
                                       gradient: const LinearGradient(colors: [
-                                        Colors.white,
+                                        Color.fromARGB(255, 255, 145, 0),
                                         Color.fromARGB(255, 255, 179, 0),
                                       ]),
                                     ),
@@ -115,7 +115,7 @@ class _SunPageState extends State<SunPage> {
                                       InfoMoonAndSunContainer(
                                         categoryName: "Gravity:", 
                                         categoryResult: "${snapshot.data!.gravity.toString()}", 
-                                        color: Color.fromARGB(255, 255, 179, 0), 
+                                        color: Color.fromARGB(255, 255, 145, 0), 
                                         colorText: Colors.white, 
                                         )
                                     ],
@@ -127,7 +127,7 @@ class _SunPageState extends State<SunPage> {
                                       InfoMoonAndSunContainer(
                                         categoryName: "Density:", 
                                         categoryResult: "${snapshot.data!.density.toString()}", 
-                                        color: Color.fromARGB(255, 255, 179, 0), 
+                                        color: Color.fromARGB(255, 255, 145, 0), 
                                         colorText: Colors.white, 
                                         )
                                     ],
