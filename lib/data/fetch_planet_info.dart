@@ -21,36 +21,33 @@ class Album {
   final String id;
   final double density;
   final String englishName;
+  final double massValue;
+  final double gravity;
+  final double volValue;
+  final String discoveredBy;
+  final String discoveryDate;
 
   const Album({
     required this.id,
     required this.density,
-    required this.englishName
+    required this.englishName,
+    required this.massValue,
+    required this.gravity,
+    required this.volValue,
+    required this.discoveredBy,
+    required this.discoveryDate,
   });
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
       id: json['id'],
       density: json['density'],
-      englishName: json['englishName']
+      englishName: json['englishName'],
+      massValue: json['mass']['massValue'],
+      gravity: json['gravity'],
+      volValue: json['vol']['volValue'],
+      discoveredBy: json['discoveredBy'],
+      discoveryDate: json['discoveryDate'],
     );
   }
 }
-// class Album {
-//   String? id;
-//   double? density;
-
-//   Album({required this.id, required this.density});
-
-//   Album.fromJson(Map<String, dynamic> json) {
-//     id = json['id'];
-//     density = json['density'];
-//   }
-
-//   Map<String, dynamic> toJson() {
-//     final Map<String, dynamic> data = Map<String, dynamic>();
-//     data['id'] = id;
-//     data['density'] = density;
-//     return data;
-//   }
-// }

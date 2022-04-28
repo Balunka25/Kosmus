@@ -43,12 +43,14 @@ class Bodies {
 
   Bodies.fromJson(Map<String, dynamic> json) {
     id = json['id'];
+    name = json['name'];
     englishName = json['englishName'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = Map<String, dynamic>();
     data['id'] = this.id;
+    data['name'] = this.name;
     data['englishName'] = this.englishName;
     return data;
   }

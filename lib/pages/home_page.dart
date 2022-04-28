@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:cronus/data/fetch_all_planets.dart';
 import 'package:cronus/pages/planet_info.dart';
 import 'package:cronus/widgets/card_planets.dart';
+import 'package:cronus/widgets/loading_animation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../controller/home_controller.dart';
@@ -18,7 +19,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final controller = HomeController();
-  String? imageUrl;
   @override
   void initState() {
     setState(() {
@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
     });
     super.initState();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               Container(
                 margin: EdgeInsets.only(right: 40, left: 40),
-                height: 200,
+                height: 300,
                 child: FutureBuilder(
                   future: controller.start(),
                   builder: ((context, snapshot) {
@@ -57,8 +57,6 @@ class _HomePageState extends State<HomePage> {
                               filter:
                                   ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
                               child: Container(
-                                  width: 150,
-                                  height: 150,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(20.0),
                                       color:
@@ -67,32 +65,45 @@ class _HomePageState extends State<HomePage> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      const SizedBox(height: 10),
-                                      // Container(
-                                      //   decoration: BoxDecoration(
-                                      //     image: DecorationImage(
-                                      //         image: AssetImage(
-                                      //             imageUrl!)),
-                                      //   ),
-                                      // ),
+                                      const SizedBox(height: 40),
                                       Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
                                         children: [
-                                          const SizedBox(height: 10),
-                                          Text(
+                                          Container(
+                                            height: 130,
+                                            width: 130,
+                                            decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                  image: AssetImage(
+                                                      "lib/images/${controller.result.bodies![index].id}.png")),
+                                            ),
+                                          ),
+                                          SizedBox(width: 30),
+                                          Column(
+                                            children: [
+                                              Text(
                                               controller.result.bodies![index]
                                                   .englishName!,
                                               style: const TextStyle(
                                                   color: Colors.white,
                                                   fontWeight: FontWeight.bold,
                                                   fontSize: 28)),
+                                                  SizedBox(height: 5),
+                                                  Text(
+                                              controller.result.bodies![index]
+                                                  .name!,
+                                              style: TextStyle(
+                                                  color: Colors.grey[400],
+                                                  fontWeight: FontWeight.normal,
+                                                  fontSize: 19)),
+                                            ],
+                                          ),
                                         ],
                                       ),
-                                      const SizedBox(height: 80),
+                                      
+                                      SizedBox(height: 50),
                                       Container(
-                                        margin: EdgeInsets.only(
-                                            right: 40, left: 40),
+                                        margin: const EdgeInsets.only(
+                                            right: 50, left: 50),
                                         child: ElevatedButton(
                                             style: ElevatedButton.styleFrom(
                                               primary: const Color.fromARGB(
@@ -156,12 +167,7 @@ class _HomePageState extends State<HomePage> {
                             );
                           });
                     }
-                    return const Center(
-                      child: CircularProgressIndicator(
-                        color: Colors.purple,
-                        strokeWidth: 8.0,
-                      ),
-                    );
+                    return const LoadingAnimation();
                   }),
                 ),
               ),
