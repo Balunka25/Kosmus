@@ -68,8 +68,6 @@ class _HomePageState extends State<HomePage> {
               const Spacer(),
               const Icon(Icons.circle, size: 5, color: Colors.white),
               const Spacer(),
-              const Icon(Icons.circle, size: 5, color: Colors.white),
-              const Spacer(),
               Container(
                 margin: const EdgeInsets.only(left: 50),
                 height: 250,
@@ -218,12 +216,10 @@ class _HomePageState extends State<HomePage> {
               const Spacer(),
               const Icon(Icons.circle, size: 5, color: Colors.white),
               const Spacer(),
-              const Icon(Icons.circle, size: 5, color: Colors.white),
-              const Spacer(),
               Ink.image(
                 image: const AssetImage("lib/images/sun.png"),
-                height: 100,
-                width: 190,
+                height: 160,
+                width: 160,
                 child: InkWell(
                   onTap: () {
                     Navigator.push(context,

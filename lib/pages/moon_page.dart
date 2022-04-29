@@ -16,7 +16,6 @@ class MoonPage extends StatefulWidget {
   final double? volValue;
   final double? density;
 
-
   const MoonPage({
     Key? key,
     this.englishName,
@@ -102,7 +101,44 @@ class _MoonPageState extends State<MoonPage> {
                                   ],
                                 ),
                               ]),
-                          const SizedBox(height: 140),
+                          const SizedBox(height: 50),
+                          Container(
+                            margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                            child: Text(
+                              "The Moon is Earth's only natural satellite. At about one-quarter the diameter of Earth, it is the fifth largest satellite in the Solar System and the largest satellite in the Solar System",
+                              style: TextStyle(
+                                  color: Colors.grey[800],
+                                  fontFamily: GoogleFonts.mulish().fontFamily,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold
+                                  ),
+                              textAlign: TextAlign.justify,
+                            ),
+                          ),
+                          const SizedBox(height: 20),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                color: Colors.white,
+                                width: 100,
+                                height: 2,
+                              ),
+                              const SizedBox(width: 10),
+                              const Icon(
+                                Icons.arrow_drop_down,
+                                color: Colors.white,
+                                size: 40,
+                              ),
+                              const SizedBox(width: 10),
+                              Container(
+                                color: Colors.white,
+                                width: 100,
+                                height: 2,
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 20),
                           Column(
                             children: [
                               Column(
@@ -111,11 +147,12 @@ class _MoonPageState extends State<MoonPage> {
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       InfoMoonAndSunContainer(
-                                        categoryName: "Gravity:", 
-                                        categoryResult: "${snapshot.data!.gravity.toString()}", 
-                                        color: Colors.black, 
-                                        colorText: Colors.white, 
-                                        )
+                                        categoryName: "Gravity:",
+                                        categoryResult:
+                                            "${snapshot.data!.gravity.toString()}",
+                                        color: Colors.black,
+                                        colorText: Colors.white,
+                                      )
                                     ],
                                   ),
                                   const SizedBox(height: 20),
@@ -123,11 +160,12 @@ class _MoonPageState extends State<MoonPage> {
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       InfoMoonAndSunContainer(
-                                        categoryName: "Density:", 
-                                        categoryResult: "${snapshot.data!.density.toString()}", 
-                                        color: Colors.black, 
-                                        colorText: Colors.white, 
-                                        )
+                                        categoryName: "Density:",
+                                        categoryResult:
+                                            "${snapshot.data!.density.toString()}",
+                                        color: Colors.black,
+                                        colorText: Colors.white,
+                                      )
                                     ],
                                   )
                                 ],
@@ -139,11 +177,12 @@ class _MoonPageState extends State<MoonPage> {
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       InfoMoonAndSunContainer(
-                                        categoryName: "Volume:", 
-                                        categoryResult: "${snapshot.data!.volValue.toString()}", 
-                                        color: Colors.white, 
-                                        colorText: Colors.black, 
-                                        )
+                                        categoryName: "Volume:",
+                                        categoryResult:
+                                            "${snapshot.data!.volValue.toString()}",
+                                        color: Colors.white,
+                                        colorText: Colors.black,
+                                      )
                                     ],
                                   ),
                                   const SizedBox(height: 20),
@@ -151,18 +190,18 @@ class _MoonPageState extends State<MoonPage> {
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       InfoMoonAndSunContainer(
-                                        categoryName: "Mass:", 
-                                        categoryResult: "${snapshot.data!.massValue.toString()}", 
-                                        color: Colors.white, 
-                                        colorText: Colors.black, 
-                                        )
+                                        categoryName: "Mass:",
+                                        categoryResult:
+                                            "${snapshot.data!.massValue.toString()}",
+                                        color: Colors.white,
+                                        colorText: Colors.black,
+                                      )
                                     ],
                                   )
                                 ],
                               ),
                             ],
                           )
-                          
                         ],
                       );
                     } else if (snapshot.hasError) {

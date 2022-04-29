@@ -43,7 +43,10 @@ class CardInitialPage extends StatelessWidget {
                 Container(
                   margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                   child: Text("The Solar System formed 4.6 billion years ago from the gravitational collapse of a giant interstellar molecular cloud.",
-                  style: TextStyle(color: Colors.grey, fontFamily: GoogleFonts.mulish().fontFamily, fontSize: 16),
+                  style: TextStyle(
+                    color: Colors.grey, 
+                    fontFamily: GoogleFonts.mulish().fontFamily, 
+                    fontSize: 16),
                   textAlign: TextAlign.center,
                   ),
                 ),

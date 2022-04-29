@@ -104,7 +104,44 @@ class _SunPageState extends State<SunPage> {
                                   ],
                                 ),
                               ]),
-                          const SizedBox(height: 140),
+                          const SizedBox(height: 50),
+                          Container(
+                            margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                            child: Text(
+                              "The Sun is the star at the center of the Solar System. It's heated to incandescence by nuclear fusion reactions in its core. It is by far the most important source of energy for life on Earth.",
+                              style: TextStyle(
+                                  color: Colors.grey[800],
+                                  fontFamily: GoogleFonts.exo().fontFamily,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold
+                                  ),
+                                  textAlign: TextAlign.justify,
+                            ),
+                          ),
+                          const SizedBox(height: 20),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                color: Colors.white,
+                                width: 100,
+                                height: 2,
+                              ),
+                              const SizedBox(width: 10),
+                              const Icon(
+                                Icons.arrow_drop_down,
+                                color: Colors.white,
+                                size: 40,
+                              ),
+                              const SizedBox(width: 10),
+                              Container(
+                                color: Colors.white,
+                                width: 100,
+                                height: 2,
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 20),
                           Column(
                             children: [
                               Column(

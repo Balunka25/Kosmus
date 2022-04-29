@@ -73,7 +73,7 @@ class _PlanetInfoState extends State<PlanetInfo> {
                               decoration: BoxDecoration(
                                 image: DecorationImage(
                                     image: AssetImage(
-                                        'lib/images/${snapshot.data!.id}.png')),
+                                        'lib/images/${snapshot.data!.id}.gif')),
                               ),
                             ),
                             const SizedBox(height: 10),
