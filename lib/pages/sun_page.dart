@@ -1,10 +1,6 @@
-import 'package:cronus/data/fetch_moon_info.dart';
-import 'package:cronus/widgets/card_planets.dart';
 import 'package:cronus/widgets/info_moon_and_sun_container.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'dart:math' as math;
-import '../data/fetch_planet_info.dart';
 import '../data/fetch_sun_info.dart';
 import '../widgets/gradient_text.dart';
 import '../widgets/loading_animation.dart';
@@ -113,9 +109,8 @@ class _SunPageState extends State<SunPage> {
                                   color: Colors.grey[800],
                                   fontFamily: GoogleFonts.exo().fontFamily,
                                   fontSize: 18,
-                                  fontWeight: FontWeight.bold
-                                  ),
-                                  textAlign: TextAlign.justify,
+                                  fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.justify,
                             ),
                           ),
                           const SizedBox(height: 20),
@@ -150,11 +145,13 @@ class _SunPageState extends State<SunPage> {
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       InfoMoonAndSunContainer(
-                                        categoryName: "Gravity:", 
-                                        categoryResult: "${snapshot.data!.gravity.toString()}", 
-                                        color: Color.fromARGB(255, 255, 145, 0), 
-                                        colorText: Colors.white, 
-                                        )
+                                        categoryName: "Gravity:",
+                                        categoryResult:
+                                            "${snapshot.data!.gravity.toString()}",
+                                        color: const Color.fromARGB(
+                                            255, 255, 145, 0),
+                                        colorText: Colors.white,
+                                      )
                                     ],
                                   ),
                                   const SizedBox(height: 20),
@@ -162,11 +159,13 @@ class _SunPageState extends State<SunPage> {
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       InfoMoonAndSunContainer(
-                                        categoryName: "Density:", 
-                                        categoryResult: "${snapshot.data!.density.toString()}", 
-                                        color: Color.fromARGB(255, 255, 145, 0), 
-                                        colorText: Colors.white, 
-                                        )
+                                        categoryName: "Density:",
+                                        categoryResult:
+                                            "${snapshot.data!.density.toString()}",
+                                        color: const Color.fromARGB(
+                                            255, 255, 145, 0),
+                                        colorText: Colors.white,
+                                      )
                                     ],
                                   )
                                 ],
@@ -178,11 +177,12 @@ class _SunPageState extends State<SunPage> {
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       InfoMoonAndSunContainer(
-                                        categoryName: "Volume:", 
-                                        categoryResult: "${snapshot.data!.volValue.toString()}", 
-                                        color: Colors.white, 
-                                        colorText: Colors.black, 
-                                        )
+                                        categoryName: "Volume:",
+                                        categoryResult:
+                                            "${snapshot.data!.volValue.toString()}",
+                                        color: Colors.white,
+                                        colorText: Colors.black,
+                                      )
                                     ],
                                   ),
                                   const SizedBox(height: 20),
@@ -190,18 +190,18 @@ class _SunPageState extends State<SunPage> {
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       InfoMoonAndSunContainer(
-                                        categoryName: "Mass:", 
-                                        categoryResult: "${snapshot.data!.massValue.toString()}", 
-                                        color: Colors.white, 
-                                        colorText: Colors.black, 
-                                        )
+                                        categoryName: "Mass:",
+                                        categoryResult:
+                                            "${snapshot.data!.massValue.toString()}",
+                                        color: Colors.white,
+                                        colorText: Colors.black,
+                                      )
                                     ],
                                   )
                                 ],
                               ),
                             ],
                           )
-                          
                         ],
                       );
                     } else if (snapshot.hasError) {

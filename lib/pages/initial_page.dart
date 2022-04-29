@@ -17,14 +17,14 @@ class _InitialPageState extends State<InitialPage> {
         width: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("lib/images/backgroundimage_initial_page.gif"), 
+              image: AssetImage("lib/images/backgroundimage_initial_page.gif"),
               fit: BoxFit.cover),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            CardInitialPage(),
-            SizedBox(height: 25),
+            const CardInitialPage(),
+            const SizedBox(height: 25),
             Container(
               color: Colors.black,
               width: 400,

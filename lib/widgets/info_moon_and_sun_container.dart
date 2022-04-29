@@ -1,10 +1,5 @@
-import 'dart:ui';
-
-import 'package:cronus/widgets/custom_button_explore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../pages/home_page.dart';
 
 class InfoMoonAndSunContainer extends StatelessWidget {
   final String categoryName;
@@ -33,11 +28,17 @@ class InfoMoonAndSunContainer extends StatelessWidget {
           const SizedBox(width: 15),
           Text(categoryName,
               style: TextStyle(
-                  color: colorText, fontWeight: FontWeight.bold, fontSize: 20, fontFamily: GoogleFonts.rubik().fontFamily)),
+                  color: colorText,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  fontFamily: GoogleFonts.rubik().fontFamily)),
           const SizedBox(width: 15),
           const SizedBox(height: 30),
           Text(categoryResult,
-              style: TextStyle(color: colorText, fontSize: 22, fontFamily: GoogleFonts.ubuntu().fontFamily)),
+              style: TextStyle(
+                  color: colorText,
+                  fontSize: 22,
+                  fontFamily: GoogleFonts.ubuntu().fontFamily)),
           const SizedBox(width: 20)
         ],
       ),

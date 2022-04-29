@@ -6,32 +6,32 @@ ThemeData theme() {
     primaryColor: const Color.fromARGB(255, 186, 34, 23),
     fontFamily: GoogleFonts.mukta().fontFamily,
     textTheme: TextTheme(
-      headline1: TextStyle(
+      headline1: const TextStyle(
         color: Colors.white,
         fontWeight: FontWeight.normal,
         fontSize: 32,
       ),
-      headline2: TextStyle(
+      headline2: const TextStyle(
         color: Colors.white,
         fontWeight: FontWeight.normal,
         fontSize: 24,
       ),
-      headline3: TextStyle(
+      headline3: const TextStyle(
         color: Colors.white,
         fontWeight: FontWeight.normal,
         fontSize: 20,
       ),
-      headline4: TextStyle(
+      headline4: const TextStyle(
         color: Colors.white,
         fontWeight: FontWeight.normal,
         fontSize: 16,
       ),
-      headline5: TextStyle(
+      headline5: const TextStyle(
         color: Colors.white,
         fontWeight: FontWeight.normal,
         fontSize: 14,
       ),
-      headline6: TextStyle(
+      headline6: const TextStyle(
         color: Colors.white,
         fontWeight: FontWeight.normal,
         fontSize: 14,

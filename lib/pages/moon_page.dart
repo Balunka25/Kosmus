@@ -1,10 +1,7 @@
 import 'package:cronus/data/fetch_moon_info.dart';
-import 'package:cronus/widgets/card_planets.dart';
 import 'package:cronus/widgets/info_moon_and_sun_container.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'dart:math' as math;
-import '../data/fetch_planet_info.dart';
 import '../widgets/gradient_text.dart';
 import '../widgets/loading_animation.dart';
 
@@ -110,8 +107,7 @@ class _MoonPageState extends State<MoonPage> {
                                   color: Colors.grey[800],
                                   fontFamily: GoogleFonts.mulish().fontFamily,
                                   fontSize: 16,
-                                  fontWeight: FontWeight.bold
-                                  ),
+                                  fontWeight: FontWeight.bold),
                               textAlign: TextAlign.justify,
                             ),
                           ),

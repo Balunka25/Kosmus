@@ -80,25 +80,25 @@ class _PlanetInfoState extends State<PlanetInfo> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                const Icon(Icons.arrow_forward_ios,
-                                color: Colors.white,
+                                const Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: Colors.white,
                                 ),
                                 const SizedBox(width: 5),
                                 Text(
                                   snapshot.data!.englishName.toUpperCase(),
                                   style: TextStyle(
                                       fontFamily:
-                                          GoogleFonts.istokWeb()
-                                              .fontFamily,
+                                          GoogleFonts.istokWeb().fontFamily,
                                       fontSize: 30,
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.white
-                                      ),
-                                      textAlign: TextAlign.center,
+                                      color: Colors.white),
+                                  textAlign: TextAlign.center,
                                 ),
                                 const SizedBox(width: 10),
-                                const Icon(Icons.arrow_back_ios,
-                                color: Colors.white,
+                                const Icon(
+                                  Icons.arrow_back_ios,
+                                  color: Colors.white,
                                 ),
                               ],
                             ),
@@ -151,7 +151,8 @@ class _PlanetInfoState extends State<PlanetInfo> {
                                 Text(
                                   "Discovered by:",
                                   style: TextStyle(
-                                      color: Color.fromARGB(255, 229, 187, 1),
+                                      color: const Color.fromARGB(
+                                          255, 229, 187, 1),
                                       fontFamily:
                                           GoogleFonts.rubik().fontFamily,
                                       fontSize: 24,

@@ -4,7 +4,8 @@ import 'package:dio/dio.dart';
 
 Future<Result> fetchAllPlanets() async {
   final dio = Dio();
-  final url2 ="https://api.le-systeme-solaire.net/rest/bodies?filter[]=isPlanet,eq,true";
+  const url2 =
+      "https://api.le-systeme-solaire.net/rest/bodies?filter[]=isPlanet,eq,true";
   final response = await dio.get(url2);
   final json = jsonDecode(response.data.toString());
   final allplanets = Result.fromJson(json as Map<String, dynamic>);
@@ -27,8 +28,8 @@ class Result {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = Map<String, dynamic>();
-    if (this.bodies != null) {
-      data['bodies'] = this.bodies!.map((v) => v.toJson()).toList();
+    if (bodies != null) {
+      data['bodies'] = bodies!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -49,9 +50,9 @@ class Bodies {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = Map<String, dynamic>();
-    data['id'] = this.id;
-    data['name'] = this.name;
-    data['englishName'] = this.englishName;
+    data['id'] = id;
+    data['name'] = name;
+    data['englishName'] = englishName;
     return data;
   }
 }

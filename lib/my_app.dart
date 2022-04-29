@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'pages/initial_page.dart';
 
 class MyApp extends StatelessWidget {
@@ -7,13 +6,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
-    return 
-      MaterialApp(
-        title: 'Cosmos',
-        debugShowCheckedModeBanner: false,
-        home: const InitialPage(),
-      );
+    return const MaterialApp(
+      title: 'Cosmos',
+      debugShowCheckedModeBanner: false,
+      home: InitialPage(),
+    );
   }
 }
