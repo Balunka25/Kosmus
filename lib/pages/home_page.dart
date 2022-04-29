@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:cronus/data/fetch_all_planets.dart';
+import 'package:cronus/pages/asteroid_page.dart';
 import 'package:cronus/pages/moon_page.dart';
 import 'package:cronus/pages/planet_info.dart';
 import 'package:cronus/widgets/circle_column.dart';
@@ -44,18 +45,37 @@ class _HomePageState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 50),
-              Ink.image(
-                image: const AssetImage("lib/images/moon.png"),
-                height: 100,
-                width: 190,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: ((context) => const MoonPage())));
-                  },
-                ),
+              Row(
+                children: [
+                  const SizedBox(width: 80),
+                  Ink.image(
+                    image: const AssetImage("lib/images/moon.png"),
+                    height: 100,
+                    width: 190,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: ((context) => const MoonPage())));
+                      },
+                    ),
+                  ),
+                  const SizedBox(width: 30),
+                  Ink.image(
+                    height: 50,
+                    width: 50,
+                    image: const AssetImage("lib/images/asteroid-unscreen.gif"),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: ((context) => const AsteroidPage())));
+                      },
+                    ),
+                  ),
+                ],
               ),
               const CircleColumn(),
               Container(
@@ -79,7 +99,7 @@ class _HomePageState extends State<HomePage> {
                                         borderRadius:
                                             BorderRadius.circular(20.0),
                                         color:
-                                            Colors.grey[800]!.withOpacity(0.4)),
+                                            Colors.grey[700]!.withOpacity(0.4)),
                                     child: Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Column(
