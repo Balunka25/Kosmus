@@ -1,14 +1,10 @@
 import 'dart:ui';
-
 import 'package:cronus/data/fetch_asteroid_info.dart';
 import 'package:cronus/widgets/button_back.dart';
 import 'package:cronus/widgets/card_expansiontile_column.dart';
-import 'package:cronus/widgets/info_moon_and_sun_container.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../data/fetch_sun_info.dart';
 import '../widgets/card_expansiontile_row.dart';
-import '../widgets/gradient_text.dart';
 import '../widgets/loading_animation.dart';
 
 class AsteroidPage extends StatefulWidget {
@@ -49,7 +45,6 @@ class _AsteroidPageState extends State<AsteroidPage> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 250,
       child: Stack(fit: StackFit.expand, children: [
         Image.asset('lib/images/backgroundimage_asteroid.jpeg'),
         ClipRRect(

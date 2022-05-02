@@ -67,7 +67,7 @@ class _PlanetInfoState extends State<PlanetInfo> {
                       return Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(height: 10),
+                            const SizedBox(height: 10),
                             Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: const [
@@ -118,14 +118,14 @@ class _PlanetInfoState extends State<PlanetInfo> {
                                     CardPlanets(
                                       categoryName: "DENSITY",
                                       categoryResult:
-                                          "${snapshot.data!.density.toString()}",
+                                          snapshot.data!.density.toString(),
                                       color: Colors.white.withOpacity(0.8),
                                       colorText: Colors.black,
                                     ),
                                     CardPlanets(
                                       categoryName: "MASS",
                                       categoryResult:
-                                          "${snapshot.data!.massValue.toString()}",
+                                          snapshot.data!.massValue.toString(),
                                       color: Colors.grey[900]!,
                                       colorText: Colors.white,
                                     )
@@ -136,14 +136,14 @@ class _PlanetInfoState extends State<PlanetInfo> {
                                     CardPlanets(
                                       categoryName: "GRAVITY",
                                       categoryResult:
-                                          "${snapshot.data!.gravity.toString()}",
+                                          snapshot.data!.gravity.toString(),
                                       color: Colors.grey[900]!,
                                       colorText: Colors.white,
                                     ),
                                     CardPlanets(
                                       categoryName: "VOLUME",
                                       categoryResult:
-                                          "${snapshot.data!.volValue.toString()}",
+                                          snapshot.data!.volValue.toString(),
                                       color: Colors.white.withOpacity(0.8),
                                       colorText: Colors.black,
                                     )
@@ -167,7 +167,7 @@ class _PlanetInfoState extends State<PlanetInfo> {
                                 ),
                                 const SizedBox(height: 15),
                                 Text(
-                                  "${snapshot.data!.discoveredBy.toString()}",
+                                  snapshot.data!.discoveredBy.toString(),
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontFamily: GoogleFonts.ubuntu().fontFamily,
@@ -194,7 +194,7 @@ class _PlanetInfoState extends State<PlanetInfo> {
                                         fontWeight: FontWeight.bold)),
                                 const SizedBox(height: 15),
                                 Text(
-                                    "${snapshot.data!.discoveryDate.toString()}",
+                                    snapshot.data!.discoveryDate.toString(),
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontFamily:

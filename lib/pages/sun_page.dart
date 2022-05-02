@@ -153,7 +153,7 @@ class _SunPageState extends State<SunPage> {
                                       InfoMoonAndSunContainer(
                                         categoryName: "Gravity:",
                                         categoryResult:
-                                            "${snapshot.data!.gravity.toString()}",
+                                            snapshot.data!.gravity.toString(),
                                         color: const Color.fromARGB(
                                             255, 255, 145, 0),
                                         colorText: Colors.white,
@@ -167,7 +167,7 @@ class _SunPageState extends State<SunPage> {
                                       InfoMoonAndSunContainer(
                                         categoryName: "Density:",
                                         categoryResult:
-                                            "${snapshot.data!.density.toString()}",
+                                            snapshot.data!.density.toString(),
                                         color: const Color.fromARGB(
                                             255, 255, 145, 0),
                                         colorText: Colors.white,
@@ -185,7 +185,7 @@ class _SunPageState extends State<SunPage> {
                                       InfoMoonAndSunContainer(
                                         categoryName: "Volume:",
                                         categoryResult:
-                                            "${snapshot.data!.volValue.toString()}",
+                                            snapshot.data!.volValue.toString(),
                                         color: Colors.white,
                                         colorText: Colors.black,
                                       )
@@ -198,7 +198,7 @@ class _SunPageState extends State<SunPage> {
                                       InfoMoonAndSunContainer(
                                         categoryName: "Mass:",
                                         categoryResult:
-                                            "${snapshot.data!.massValue.toString()}",
+                                            snapshot.data!.massValue.toString(),
                                         color: Colors.white,
                                         colorText: Colors.black,
                                       )

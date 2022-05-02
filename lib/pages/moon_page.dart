@@ -151,7 +151,7 @@ class _MoonPageState extends State<MoonPage> {
                                       InfoMoonAndSunContainer(
                                         categoryName: "Gravity:",
                                         categoryResult:
-                                            "${snapshot.data!.gravity.toString()}",
+                                            snapshot.data!.gravity.toString(),
                                         color: Colors.black,
                                         colorText: Colors.white,
                                       )
@@ -164,7 +164,7 @@ class _MoonPageState extends State<MoonPage> {
                                       InfoMoonAndSunContainer(
                                         categoryName: "Density:",
                                         categoryResult:
-                                            "${snapshot.data!.density.toString()}",
+                                            snapshot.data!.density.toString(),
                                         color: Colors.black,
                                         colorText: Colors.white,
                                       )
@@ -181,7 +181,7 @@ class _MoonPageState extends State<MoonPage> {
                                       InfoMoonAndSunContainer(
                                         categoryName: "Volume:",
                                         categoryResult:
-                                            "${snapshot.data!.volValue.toString()}",
+                                            snapshot.data!.volValue.toString(),
                                         color: Colors.white,
                                         colorText: Colors.black,
                                       )
@@ -194,7 +194,7 @@ class _MoonPageState extends State<MoonPage> {
                                       InfoMoonAndSunContainer(
                                         categoryName: "Mass:",
                                         categoryResult:
-                                            "${snapshot.data!.massValue.toString()}",
+                                            snapshot.data!.massValue.toString(),
                                         color: Colors.white,
                                         colorText: Colors.black,
                                       )
