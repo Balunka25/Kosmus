@@ -16,16 +16,31 @@ Future<DataAsteroid> fetchAsteroidInfo() async {
 class DataAsteroid {
   final String id;
   final String englishName;
+  final num mass;
+  final String dimension;
+  final String alternativeName;
+  final String discoveredBy;
+  final String discoveryDate;
 
   const DataAsteroid({
     required this.id,
     required this.englishName,
+    required this.mass,
+    required this.dimension,
+    required this.alternativeName,
+    required this.discoveredBy,
+    required this.discoveryDate,
   });
 
   factory DataAsteroid.fromJson(Map<String, dynamic> json) {
     return DataAsteroid(
       id: json['id'],
       englishName: json['englishName'],
+      mass: json['mass']['massValue'],
+      dimension: json['dimension'],
+      alternativeName: json['alternativeName'],
+      discoveredBy: json['discoveredBy'],
+      discoveryDate: json['discoveryDate'],
     );
   }
 }

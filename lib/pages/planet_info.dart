@@ -2,6 +2,7 @@ import 'package:cronus/widgets/card_planets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../data/fetch_planet_info.dart';
+import '../widgets/button_back.dart';
 import '../widgets/loading_animation.dart';
 
 class PlanetInfo extends StatefulWidget {
@@ -66,7 +67,13 @@ class _PlanetInfoState extends State<PlanetInfo> {
                       return Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const SizedBox(height: 40),
+                            SizedBox(height: 10),
+                            Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: const [
+                              ButtonBack(color: Colors.white)
+                            ],
+                          ),
                             Container(
                               height: 300,
                               width: 300,

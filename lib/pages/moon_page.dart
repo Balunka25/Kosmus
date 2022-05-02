@@ -2,6 +2,7 @@ import 'package:cronus/data/fetch_moon_info.dart';
 import 'package:cronus/widgets/info_moon_and_sun_container.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../widgets/button_back.dart';
 import '../widgets/gradient_text.dart';
 import '../widgets/loading_animation.dart';
 
@@ -51,7 +52,7 @@ class _MoonPageState extends State<MoonPage> {
             Color.fromARGB(255, 72, 72, 72),
             Colors.black,
           ])),
-      child: Scaffold(
+      child: Scaffold(    
         backgroundColor: Colors.transparent,
         body: SingleChildScrollView(
           child: Padding(
@@ -65,10 +66,15 @@ class _MoonPageState extends State<MoonPage> {
                       return Column(
                         children: [
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: const [
+                              ButtonBack(color: Colors.black)
+                            ],
+                          ),
+                          Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Container(
-                                  margin: const EdgeInsets.only(top: 50),
                                   height: 180,
                                   width: 180,
                                   decoration: const BoxDecoration(

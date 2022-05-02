@@ -2,6 +2,7 @@ import 'package:cronus/widgets/info_moon_and_sun_container.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../data/fetch_sun_info.dart';
+import '../widgets/button_back.dart';
 import '../widgets/gradient_text.dart';
 import '../widgets/loading_animation.dart';
 
@@ -67,10 +68,15 @@ class _SunPageState extends State<SunPage> {
                       return Column(
                         children: [
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: const [
+                              ButtonBack(color: Colors.black)
+                            ],
+                          ),
+                          Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Container(
-                                  margin: const EdgeInsets.only(top: 50),
                                   height: 180,
                                   width: 180,
                                   decoration: const BoxDecoration(
